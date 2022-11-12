@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32630.194
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "monitoring-system", "monitoring-system\monitoring-system.vcxproj", "{CFF3E6D4-3B6F-4969-B13D-5AA5D6989323}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CFF3E6D4-3B6F-4969-B13D-5AA5D6989323}.Debug|x64.ActiveCfg = Debug|x64
+		{CFF3E6D4-3B6F-4969-B13D-5AA5D6989323}.Debug|x64.Build.0 = Debug|x64
+		{CFF3E6D4-3B6F-4969-B13D-5AA5D6989323}.Release|x64.ActiveCfg = Release|x64
+		{CFF3E6D4-3B6F-4969-B13D-5AA5D6989323}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {188A1FC4-B1FA-495D-A50C-B59C7D6ADD34}
+	EndGlobalSection
+EndGlobal

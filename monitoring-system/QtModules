@@ -1,0 +1,8 @@
+#ifndef __QT_MODULES_H_
+#define __QT_MODULES_H_
+#include <QtCharts>
+#include <QtWidgets>
+#include <QtCore>
+#include <QtGui>
+#include <QtUiTools>
+#endif
