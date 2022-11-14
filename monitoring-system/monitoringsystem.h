@@ -1,6 +1,7 @@
 #pragma once
-#include <QtCharts>
-#include <QtWidgets>
+#include <QtModules>
+#include <Charts>
+
 
 class MonitoringSystem  : public QMainWindow
 {
@@ -8,8 +9,8 @@ class MonitoringSystem  : public QMainWindow
 
 private:
 	QWidget* main;
-	QChart* stressChart;
-	QChart* vonmisesChart;
+	Chart* stressChart;
+	Chart* vonmisesChart;
 	QOpenGLWidget* canvas;
 	QWidget* stressChartWidget;
 	QWidget* vonmisesChartWidget;
@@ -20,7 +21,7 @@ public:
 
 	void setupMainUi();
 
-	void setupChartUi(QWidget* parent, QChart* chart, const char* title);
+	void setupChartUi(QWidget* parent, Chart* chart, const char* title);
 
 	~MonitoringSystem();
 

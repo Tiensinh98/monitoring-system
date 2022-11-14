@@ -2,19 +2,23 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="monitoring_system.cpp" />
+    <ClCompile Include="monitoringsystem.cpp" />
+    <ClCompile Include="charts\chart.cpp" />
+    <ClCompile Include="charts\chartview.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="variables.h" />
     <ClInclude Include="resource.h" />
+    <ClInclude Include="charts\chart.h" />
+    <ClInclude Include="charts\chartview.h" />
   </ItemGroup>
   <ItemGroup>
-    <QtMoc Include="monitoring_system.h" />
+    <QtMoc Include="monitoringsystem.h" />
   </ItemGroup>
   <ItemGroup>
-    <QtUic Include="monitoring_system.ui" />
+    <QtUic Include="monitoringsystem.ui" />
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="monitoring-system.rc" />
+    <ResourceCompile Include="monitoringsystem.rc" />
   </ItemGroup>
 </Project>

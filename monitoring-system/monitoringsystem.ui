@@ -368,6 +368,7 @@ QDockWidget::title {
               <string notr="true">#dockWidgetContents_5{
     border: 2px solid #afcfd5;
     padding: 2px;
+	background-color: transparent;
 }</string>
              </property>
              <layout class="QVBoxLayout" name="verticalLayout_4">
@@ -386,7 +387,7 @@ QDockWidget::title {
               <item>
                <widget class="QWidget" name="stressChartWidget" native="true">
                 <property name="styleSheet">
-                 <string notr="true">QWidget {
+                 <string notr="true">#stressChartWidget {
     background-color: transparent;
 }</string>
                 </property>
@@ -395,7 +396,7 @@ QDockWidget::title {
               <item>
                <widget class="QWidget" name="vonmisesChartWidget" native="true">
                 <property name="styleSheet">
-                 <string notr="true">QWidget {
+                 <string notr="true">#vonmisesChartWidget {
     border: 2px solid #afcfd5;
     padding: 2px;
 	background-color: transparent;
@@ -447,7 +448,7 @@ QDockWidget::title {
      <x>0</x>
      <y>0</y>
      <width>1183</width>
-     <height>25</height>
+     <height>22</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuSettings">

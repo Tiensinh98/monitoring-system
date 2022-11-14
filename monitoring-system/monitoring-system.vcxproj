@@ -86,21 +86,25 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <QtUic Include="monitoring_system.ui" />
+    <QtUic Include="monitoringsystem.ui" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="charts\chart.cpp" />
+    <ClCompile Include="charts\chartview.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="monitoring_system.cpp" />
+    <ClCompile Include="monitoringsystem.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <QtMoc Include="monitoring_system.h" />
+    <QtMoc Include="monitoringsystem.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="charts\chart.h" />
+    <ClInclude Include="charts\chartview.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="variables.h" />
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="monitoring-system.rc" />
+    <ResourceCompile Include="monitoringsystem.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">

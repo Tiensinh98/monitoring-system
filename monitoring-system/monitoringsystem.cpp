@@ -1,8 +1,8 @@
 #include <QString>
-#include <QtUiTools/QUiLoader>
+#include <QtModules>
 
-#include "monitoring_system.h"
 #include "variables.h"
+#include "monitoringsystem.h"
 
 MonitoringSystem::MonitoringSystem(QWidget *parent)
 	: QMainWindow(parent)
@@ -11,8 +11,8 @@ MonitoringSystem::MonitoringSystem(QWidget *parent)
     stressChartWidget = main->findChild<QWidget*>("stressChartWidget");
     vonmisesChartWidget = main->findChild<QWidget*>("vonmisesChartWidget");
     tableWidget = main->findChild<QTableWidget*>("tableWidget");
-    stressChart = new QChart();
-    vonmisesChart = new QChart();
+    stressChart = new Chart;
+    vonmisesChart = new Chart;
     setupChartUi(stressChartWidget, stressChart, STRESS_DIAGRAM_TITLE);
     setupChartUi(vonmisesChartWidget, vonmisesChart, VONMISES_DIAGRAM_TITLE);
     setWindowTitle(QString(WINDOW_TITLE));
@@ -22,7 +22,7 @@ MonitoringSystem::MonitoringSystem(QWidget *parent)
 void MonitoringSystem::setupMainUi() {
     QWidget* centralWidget = new QWidget;
     setCentralWidget(centralWidget);
-    QFile file("monitoring_system.ui");
+    QFile file("monitoringsystem.ui");
     file.open(QFile::ReadOnly);
     QUiLoader loader;
     main = loader.load(&file, this);
@@ -32,13 +32,14 @@ void MonitoringSystem::setupMainUi() {
     setPalette(PALETTE);
 }
 
-void MonitoringSystem::setupChartUi(QWidget* parent, QChart* chart, const char* title) {
-    QLineSeries* series = new QLineSeries();
-    chart->legend()->hide();
-    chart->addSeries(series);
-    chart->createDefaultAxes();
+void MonitoringSystem::setupChartUi(QWidget* parent, Chart* chart, const char* title) {
+    std::vector<DataPoint> data;
+    data.push_back(DataPoint(QDateTime(QDate(2022, 11, 14), QTime(7, 7)), 3));
+    data.push_back(DataPoint(QDateTime(QDate(2022, 11, 14), QTime(8, 7)), 6));
+    data.push_back(DataPoint(QDateTime(QDate(2022, 11, 14), QTime(9, 7)), 1));
+    chart->plot(data, CType::LINE, "Series 1");
     chart->setTitle(QString(title));
-    QChartView* chartView = new QChartView(chart);
+    ChartView* chartView = new ChartView(chart);
     chartView->setRenderHint(QPainter::Antialiasing);
     QVBoxLayout* stressChartlayout = new QVBoxLayout(parent);
     stressChartlayout->setContentsMargins(0, 0, 0, 0);

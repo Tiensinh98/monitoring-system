@@ -1,0 +1,5 @@
+#ifndef __CHARTS_MODULE_H
+#define __CHARTS_MODULE_H
+#include "chart.h"
+#include "chartview.h"
+#endif
