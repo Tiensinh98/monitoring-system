@@ -1,4 +1,5 @@
 #include <chart.h>
+#include <iostream>
 
 Chart::Chart() : QChart() {
 	xAxis = new QDateTimeAxis;
@@ -36,10 +37,30 @@ QXYSeries* Chart::createSeries(const CType& type, const std::string& title) {
 		series = new QScatterSeries();
 	}
 	series->setName(QString::fromStdString(title));
+	QObject::connect(
+		series, &QXYSeries::hovered, this, 
+		[=](const QPointF& point, bool state) { 
+			this->handleHoveredSeries(point, state, series); 
+		});
 	return series;
 }
 
-void Chart::setRangexAxis(const QDateTime& max, int timeInterval) {
-	QDateTime min = max.addSecs(-timeInterval * 60);
+void Chart::setRangexAxis(const QDateTime& max, long int timeInterval) {
+	QDateTime min = max.addSecs(- timeInterval * 60.);
 	xAxis->setRange(min, max);
+}
+
+void Chart::handleHoveredSeries(const QPointF& point, bool state, QXYSeries* series) {
+	series->selectAllPoints();
+	if (state) {
+		series->setSelectedColor(QColor(0, 0, 0));
+	}
+	else {
+		series->setSelectedColor(series->color());
+	}
+}
+
+Chart::~Chart() {
+	delete xAxis;
+	delete yAxis;
 }

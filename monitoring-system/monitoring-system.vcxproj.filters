@@ -5,12 +5,16 @@
     <ClCompile Include="monitoringsystem.cpp" />
     <ClCompile Include="charts\chart.cpp" />
     <ClCompile Include="charts\chartview.cpp" />
+    <ClCompile Include="charts\figure.cpp" />
+    <ClCompile Include="glCanvas\canvas.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="variables.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="charts\chart.h" />
     <ClInclude Include="charts\chartview.h" />
+    <ClInclude Include="charts\figure.h" />
+    <ClInclude Include="glCanvas\canvas.h" />
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="monitoringsystem.h" />

@@ -2,4 +2,5 @@
 #define __CHARTS_MODULE_H
 #include "chart.h"
 #include "chartview.h"
+#include "figure.h"
 #endif

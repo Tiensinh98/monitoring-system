@@ -3,6 +3,7 @@
 #include <vector>
 #include <QtModules>
 
+
 struct DataPoint {
 public:
 	QDateTime dateTime;
@@ -25,6 +26,7 @@ private:
 public:
 
 	Chart();
+	~Chart();
 
 	QXYSeries* plot(const std::vector<DataPoint>& data, const CType& type, const std::string& title);
 
@@ -32,8 +34,10 @@ public:
 
 	QXYSeries* createSeries(const CType& type, const std::string& title);
 
-	void setRangexAxis(const QDateTime& max, int timeInterval);
+	void setRangexAxis(const QDateTime& max, long int timeInterval);
 
+public slots:
+	void handleHoveredSeries(const QPointF& point, bool state, QXYSeries* series);
 
 };
 
